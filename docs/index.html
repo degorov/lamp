@@ -14,6 +14,7 @@
     <meta name="application-name" content="Светильник" />
     <meta name="theme-color" content="#222222" />
     <title>Светильник</title>
+    <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -21,7 +22,7 @@
       <header>
         <img src="favicon-32x32.png" alt="logo" class="logo" />
         <div class="app-title">Светильник</div>
-        <div id="link-indicator"></div>
+        <div id="lamp-status"></div>
       </header>
 
       <nav>
@@ -33,15 +34,34 @@
         </ul>
       </nav>
 
-      <main></main>
+      <main>
+        <div class="form-grid" id="page-connection">
+          <div>IP-адрес лампы:</div>
+          <div>
+            <input type="text" id="txt-ip-address" placeholder="192.168.0.100" />
+          </div>
+          <div class="form-grid__span">
+            <button id="btn-save-connection">Сохранить</button>
+          </div>
+        </div>
+      </main>
 
       <aside>
-        Инструкция
+        <div id="doc-connection">
+          <p>Введите IP-адрес светильника.</p>
+          <p>
+            После нажатия кнопки "Сохранить" приложение попробует соединиться со светильником.
+          </p>
+          <p>
+            Состояние связи будет показано цветным кружком в правом верхнем углу приложения.
+          </p>
+        </div>
       </aside>
 
       <footer>
-        Версия: 2020-07-11
+        <div>Версия: 2020-07-12</div>
       </footer>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
