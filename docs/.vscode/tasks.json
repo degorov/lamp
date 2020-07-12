@@ -6,7 +6,7 @@
     {
       "label": "Static Server",
       "type": "shell",
-      "command": "%APPDATA%\\..\\Local\\Programs\\Thonny\\python.exe -m http.server",
+      "command": "%APPDATA%\\..\\Local\\Programs\\Thonny\\python.exe ${workspaceFolder}\\.vscode\\static-server.py",
       "problemMatcher": [],
       "group": {
         "kind": "build",
