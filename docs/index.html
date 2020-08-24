@@ -1,67 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover"
-    />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="apple-mobile-web-app-title" content="Светильник" />
-    <meta name="application-name" content="Светильник" />
-    <meta name="theme-color" content="#222222" />
-    <title>Светильник</title>
-    <link rel="stylesheet" href="layout.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <img src="favicon-32x32.png" alt="logo" class="logo" />
-        <div class="app-title">Светильник</div>
-        <div id="lamp-status"></div>
-      </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="apple-mobile-web-app-title" content="Светильник" />
+        <meta name="application-name" content="Светильник" />
+        <meta name="theme-color" content="#222222" />
+        <title>Светильник</title>
+        <link rel="stylesheet" href="layout.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
 
-      <nav>
-        <ul>
-          <li><a href="">Эффекты</a></li>
-          <li><a href="">Будильник</a></li>
-          <li><a href="">Настройки</a></li>
-          <li><a href="">Подключение</a></li>
-        </ul>
-      </nav>
+            <header>
+                <img src="favicon-32x32.png" alt="logo" class="logo" />
+                <div class="app-title">Светильник</div>
+                <div id="lamp-status"></div>
+            </header>
 
-      <main>
-        <div class="form-grid" id="page-connection">
-          <div>IP-адрес лампы:</div>
-          <div>
-            <input type="text" id="txt-ip-address" placeholder="192.168.0.100" />
-          </div>
-          <div class="form-grid__span">
-            <button id="btn-save-connection">Сохранить</button>
-          </div>
+            <nav>
+                <ul>
+                    <li><a href="">Эффекты</a></li>
+                    <li><a href="">Будильник</a></li>
+                    <li><a href="">Настройки</a></li>
+                    <li><a href="">Подключение</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <div class="form-grid" id="page-connection">
+                    <div>IP-адрес лампы:</div>
+                    <div>
+                        <input type="text" id="txt-ip-address" placeholder="192.168.0.100" />
+                    </div>
+                    <div class="form-grid__span">
+                        <button id="btn-save-connection">Сохранить</button>
+                    </div>
+                </div>
+            </main>
+
+            <aside>
+                <div id="doc-connection">
+                    <p>Введите IP-адрес светильника.</p>
+                    <p>После нажатия кнопки "Сохранить" приложение попробует соединиться со светильником.</p>
+                    <p>Состояние связи будет показано цветным кружком в правом верхнем углу приложения.</p>
+                </div>
+            </aside>
+
+            <footer>
+                <div>Версия: 2020-07-12</div>
+            </footer>
+
         </div>
-      </main>
-
-      <aside>
-        <div id="doc-connection">
-          <p>Введите IP-адрес светильника.</p>
-          <p>
-            После нажатия кнопки "Сохранить" приложение попробует соединиться со светильником.
-          </p>
-          <p>
-            Состояние связи будет показано цветным кружком в правом верхнем углу приложения.
-          </p>
-        </div>
-      </aside>
-
-      <footer>
-        <div>Версия: 2020-07-12</div>
-      </footer>
-    </div>
-    <script src="main.js"></script>
-  </body>
+    </body>
 </html>

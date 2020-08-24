@@ -1,6 +1,7 @@
 import http.server
 
 class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+
     def end_headers(self):
         self.send_my_headers()
         http.server.SimpleHTTPRequestHandler.end_headers(self)
