@@ -6,57 +6,69 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-title" content="Светильник" />
         <meta name="application-name" content="Светильник" />
         <meta name="theme-color" content="#222222" />
         <title>Светильник</title>
-        <link rel="stylesheet" href="layout.css" />
-        <link rel="stylesheet" href="style.css" />
-        <script src="main.js" defer></script>
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
+        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css" />
+        <link rel="stylesheet" href="index.css" />
+        <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+        <script src="index.js" defer></script>
     </head>
     <body>
-        <div class="container">
+        <ons-splitter>
+            <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                <ons-page>
+                    <ons-list>
+                        <ons-list-item onclick="app.menuLoad('home.html')" tappable> Home </ons-list-item>
+                        <ons-list-item onclick="app.menuLoad('settings.html')" tappable> Settings </ons-list-item>
+                        <ons-list-item onclick="app.menuLoad('about.html')" tappable> About </ons-list-item>
+                    </ons-list>
+                </ons-page>
+            </ons-splitter-side>
+            <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+        </ons-splitter>
 
-            <header>
-                <img src="favicon-32x32.png" alt="logo" class="logo" />
-                <div class="app-title">Светильник</div>
-                <div id="lamp-status"></div>
-            </header>
-
-            <nav>
-                <ul>
-                    <li><a href="">Эффекты</a></li>
-                    <li><a href="">Будильник</a></li>
-                    <li><a href="">Настройки</a></li>
-                    <li><a href="">Подключение</a></li>
-                </ul>
-            </nav>
-
-            <main>
-                <div class="form-grid" id="page-connection">
-                    <div>IP-адрес лампы:</div>
-                    <div>
-                        <input type="text" id="txt-ip-address" placeholder="192.168.0.100" />
+        <template id="home.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="app.menuOpen()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
                     </div>
-                    <div class="form-grid__span">
-                        <button id="btn-save-connection">Сохранить</button>
+                    <div class="center">Main</div>
+                </ons-toolbar>
+                <p style="text-align: center; opacity: 0.6; padding-top: 20px">Swipe right to open the menu!</p>
+            </ons-page>
+        </template>
+
+        <template id="settings.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="app.menuOpen()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
                     </div>
-                </div>
-            </main>
+                    <div class="center">Settings</div>
+                </ons-toolbar>
+            </ons-page>
+        </template>
 
-            <aside>
-                <div id="doc-connection">
-                    <p>Введите IP-адрес светильника.</p>
-                    <p>После нажатия кнопки "Сохранить" приложение попробует соединиться со светильником.</p>
-                    <p>Состояние связи будет показано цветным кружком в правом верхнем углу приложения.</p>
-                </div>
-            </aside>
-
-            <footer>
-                <div>Версия: 2020-07-12</div>
-            </footer>
-
-        </div>
+        <template id="about.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="app.menuOpen()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">About</div>
+                </ons-toolbar>
+            </ons-page>
+        </template>
     </body>
 </html>
