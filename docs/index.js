@@ -79,3 +79,6 @@ function alarmSave() {
     window.cmdAlarmSave.style.visibility = 'hidden';
 }
 
+function checkConnection() {
+    return false;
+}
