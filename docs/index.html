@@ -43,8 +43,92 @@
             <ons-splitter-content id="content" page="effects.html"></ons-splitter-content>
         </ons-splitter>
 
-        <template id="home.html">
-            <ons-page>
+        <template id="effects.html">
+            <ons-page id="effects">
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="menuOpen()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                        <ons-toolbar-button class="iconStatus">
+                            <ons-icon icon="md-network-off"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">Эффекты</div>
+                </ons-toolbar>
+                <ons-list>
+                    <ons-list-item onclick="effectLoad('effectVoid', this)">
+                        <div class="left"><ons-icon icon="md-check-circle" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Отключен</div>
+                    </ons-list-item>
+                    <ons-list-item onclick="effectLoad('effectAllRandom', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Случайные пиксели</div>
+                    </ons-list-item>
+                    <ons-list-item onclick="effectLoad('effectAllHueLoop', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Цвета по кругу</div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectAllHueRotate', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Выбранный цвет</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectLoopNumbers', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Цифры</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectMatrix', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Матрица</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectSparkles', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Вспышки</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectSnow', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Снег</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectLighters', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Светлячки</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectFire', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Огонь</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item expandable onclick="effectLoad('effectPlasma', this)">
+                        <div class="left"><ons-icon icon="md-circle-o" class="list-item__icon"></ons-icon></div>
+                        <div class="center">Плазма</div>
+                        <div class="expandable-content">
+                            <ons-range style="width: 100%" value="50" onchange="effectAdjust(this)"></ons-range>
+                        </div>
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </template>
+
                 <ons-toolbar>
                     <div class="left">
                         <ons-toolbar-button onclick="app.menuOpen()">
