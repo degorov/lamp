@@ -49,3 +49,33 @@ function effectAdjust(thisRange) {
     console.log('ADJUST', thisRange.value);
 }
 
+function alarmSwitch() {
+    console.log('ALARM SWITCH');
+    alarmSave();
+}
+
+function alarmRepeat(day, onschk) {
+    console.log('REPEAT', day, onschk.checked);
+    window.cmdAlarmSave.style.visibility = 'visible';
+}
+
+function alarmTime(onstxt) {
+    console.log(onstxt.value);
+    window.cmdAlarmSave.style.visibility = 'visible';
+}
+
+function alarmBefore(onstxt) {
+    console.log(onstxt.value);
+    window.cmdAlarmSave.style.visibility = 'visible';
+}
+
+function alarmAfter(onstxt) {
+    console.log(onstxt.value);
+    window.cmdAlarmSave.style.visibility = 'visible';
+}
+
+function alarmSave() {
+    console.log('SET ALARM');
+    window.cmdAlarmSave.style.visibility = 'hidden';
+}
+

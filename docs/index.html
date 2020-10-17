@@ -129,15 +129,94 @@
             </ons-page>
         </template>
 
+        <template id="alarm.html">
+            <ons-page id="alarm">
                 <ons-toolbar>
                     <div class="left">
-                        <ons-toolbar-button onclick="app.menuOpen()">
+                        <ons-toolbar-button onclick="menuOpen()">
                             <ons-icon icon="md-menu"></ons-icon>
                         </ons-toolbar-button>
+                        <ons-toolbar-button class="iconStatus">
+                            <ons-icon icon="md-network-off"></ons-icon>
+                        </ons-toolbar-button>
                     </div>
-                    <div class="center">Main</div>
+                    <div class="center">Будильник</div>
+                    <div class="right">
+                        <ons-toolbar-button onclick="alarmSave()">
+                            <ons-icon icon="md-card-sd" id="cmdAlarmSave" style="visibility: hidden"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
                 </ons-toolbar>
-                <p style="text-align: center; opacity: 0.6; padding-top: 20px">Swipe right to open the menu!</p>
+                <ons-list>
+                    <ons-list-item>
+                        <div class="center">Будильник включен</div>
+                        <div class="right">
+                            <ons-switch onchange="alarmSwitch()"></ons-switch>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="center">Время</div>
+                        <div class="right">
+                            <ons-input id="txtAlarmTime" modifier="underbar" inputmode="numeric" placeholder="ЧЧ:ММ:СС" maxlength="8" style="width: 100px" oninput="alarmTime(this)"></ons-input>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-header>Повторять по:</ons-list-header>
+                    <ons-list-item>
+                        <label class="left">
+                            <ons-checkbox input-id="chkAlarmRepeat0" oninput="alarmRepeat(0, this)"></ons-checkbox>
+                        </label>
+                        <label for="chkAlarmRepeat0" class="center">Понедельник</label>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <label class="left">
+                            <ons-checkbox input-id="chkAlarmRepeat1" oninput="alarmRepeat(1, this)"></ons-checkbox>
+                        </label>
+                        <label for="chkAlarmRepeat1" class="center">Вторник</label>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <label class="left">
+                            <ons-checkbox input-id="chkAlarmRepeat2" oninput="alarmRepeat(2, this)"></ons-checkbox>
+                        </label>
+                        <label for="chkAlarmRepeat2" class="center">Среда</label>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <label class="left">
+                            <ons-checkbox input-id="chkAlarmRepeat3" oninput="alarmRepeat(3, this)"></ons-checkbox>
+                        </label>
+                        <label for="chkAlarmRepeat3" class="center">Четверг</label>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <label class="left">
+                            <ons-checkbox input-id="chkAlarmRepeat4" oninput="alarmRepeat(4, this)"></ons-checkbox>
+                        </label>
+                        <label for="chkAlarmRepeat4" class="center">Пятница</label>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <label class="left">
+                            <ons-checkbox input-id="chkAlarmRepeat5" oninput="alarmRepeat(5, this)"></ons-checkbox>
+                        </label>
+                        <label for="chkAlarmRepeat5" class="center">Суббота</label>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <label class="left">
+                            <ons-checkbox input-id="chkAlarmRepeat6" oninput="alarmRepeat(6, this)"></ons-checkbox>
+                        </label>
+                        <label for="chkAlarmRepeat6" class="center">Воскресенье</label>
+                    </ons-list-item>
+                    <ons-list-header>Интервалы (в минутах):</ons-list-header>
+                    <ons-list-item>
+                        <div class="center">До будильника</div>
+                        <div class="right">
+                            <ons-input id="txtAlarmBefore" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmBefore(this)" style="width: 100px"></ons-input>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="center">После будильника</div>
+                        <div class="right">
+                            <ons-input id="txtAlarmAfter" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmAfter(this)" style="width: 100px"></ons-input>
+                        </div>
+                    </ons-list-item>
+                </ons-list>
             </ons-page>
         </template>
 
