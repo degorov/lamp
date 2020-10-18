@@ -79,6 +79,10 @@ function alarmSave() {
     window.cmdAlarmSave.style.visibility = 'hidden';
 }
 
+function liveBrightness(br) {
+    document.getElementById('lblBrightness').innerText = br;
+}
+
 function checkConnection() {
     return false;
 }

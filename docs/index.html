@@ -203,17 +203,17 @@
                         </label>
                         <label for="chkAlarmRepeat6" class="center">Воскресенье</label>
                     </ons-list-item>
-                    <ons-list-header>Интервалы (в минутах):</ons-list-header>
+                    <ons-list-header>Настройки рассвета (в минутах):</ons-list-header>
                     <ons-list-item>
-                        <div class="center">До будильника</div>
+                        <div class="center">Рассвет до будильника</div>
                         <div class="right">
-                            <ons-input id="txtAlarmBefore" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmBefore(this)" style="width: 100px"></ons-input>
+                            <ons-input id="txtAlarmBefore" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmBefore(this)" style="width: 50px"></ons-input>
                         </div>
                     </ons-list-item>
                     <ons-list-item>
-                        <div class="center">После будильника</div>
+                        <div class="center">Гореть после будильника</div>
                         <div class="right">
-                            <ons-input id="txtAlarmAfter" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmAfter(this)" style="width: 100px"></ons-input>
+                            <ons-input id="txtAlarmAfter" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmAfter(this)" style="width: 50px"></ons-input>
                         </div>
                     </ons-list-item>
                 </ons-list>
@@ -232,8 +232,47 @@
                         </ons-toolbar-button>
                     </div>
                     <div class="center">Настройки</div>
+                    <div class="right">
+                        <ons-toolbar-button onclick="settingsSave()">
+                            <ons-icon icon="md-card-sd" id="cmdSettingsSave"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
                 </ons-toolbar>
-                Настройки
+                <ons-list>
+                    <ons-list-item>
+                        <div class="center">Часовой пояс</div>
+                        <div class="right">
+                            <ons-input id="txtSettingsTz" modifier="underbar" inputmode="numeric" maxlength="3" style="width: 50px"></ons-input>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-header>Максимальная яркость:&nbsp;<span id="lblBrightness">192</span></ons-list-header>
+                    <ons-list-item style="padding-left: 6px">
+                        <ons-row>
+                            <ons-col width="40px" style="text-align: center; line-height: 31px">
+                                <ons-icon icon="md-brightness-5"></ons-icon>
+                            </ons-col>
+                            <ons-col>
+                                <ons-range id="rngBrightness" oninput="liveBrightness(this.value)" style="width: 100%" min="0" max="255" value="192"></ons-range>
+                            </ons-col>
+                            <ons-col width="40px" style="text-align: center; line-height: 31px">
+                                <ons-icon icon="md-brightness-7"></ons-icon>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    <ons-list-header>Настройки Wi-Fi:</ons-list-header>
+                    <ons-list-item>
+                        <div class="center">Имя сети</div>
+                        <div class="right">
+                            <ons-input id="txtSettingsSsid" modifier="underbar" style="width: 150px"></ons-input>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="center">Пароль сети</div>
+                        <div class="right">
+                            <ons-input id="txtSettingsPass" modifier="underbar" style="width: 150px"></ons-input>
+                        </div>
+                    </ons-list-item>
+                </ons-list>
             </ons-page>
         </template>
 
