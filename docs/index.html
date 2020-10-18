@@ -13,8 +13,9 @@
         <title>Светильник</title>
         <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
         <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css" />
+        <style>.iconStatus {color: gray;}</style>
         <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-        <script src="index.js" defer></script>
+        <script src="index.js"></script>
     </head>
     <body>
         <ons-splitter>
@@ -33,7 +34,7 @@
                             <div class="left"><ons-icon icon="md-settings" class="list-item__icon"></ons-icon></div>
                             <div class="center">Настройки</div>
                         </ons-list-item>
-                        <ons-list-item onclick="menuLoad('connection.html')">
+                        <ons-list-item onclick="menuLoad('connect.html')">
                             <div class="left"><ons-icon icon="md-network-setting" class="list-item__icon"></ons-icon></div>
                             <div class="center">Подключение</div>
                         </ons-list-item>
@@ -221,7 +222,7 @@
         </template>
 
         <template id="settings.html">
-            <ons-page>
+            <ons-page id="settings">
                 <ons-toolbar>
                     <div class="left">
                         <ons-toolbar-button onclick="menuOpen()">
@@ -276,8 +277,8 @@
             </ons-page>
         </template>
 
-        <template id="connection.html">
-            <ons-page>
+        <template id="connect.html">
+            <ons-page id="connect">
                 <ons-toolbar>
                     <div class="left">
                         <ons-toolbar-button onclick="menuOpen()">
@@ -289,7 +290,14 @@
                     </div>
                     <div class="center">Подключение</div>
                 </ons-toolbar>
-                Подключение
+                <div style="text-align: center; margin-top: 30px">
+                    <p>
+                        <ons-input id="txtConnectIp" modifier="underbar" placeholder="A.B.C.D" inputmode="numeric" maxlength="15"></ons-input>
+                    </p>
+                    <p style="margin-top: 30px">
+                        <ons-button id="cmdConnect" onclick="connectLamp()">Подключиться</ons-button>
+                    </p>
+                </div>
             </ons-page>
         </template>
     </body>
