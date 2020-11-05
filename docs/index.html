@@ -2,7 +2,10 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover" />
+        <meta
+            name="viewport"
+            content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover"
+        />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -13,10 +16,15 @@
         <title>Светильник</title>
         <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
         <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css" />
-        <style>.iconStatus {color: gray;}</style>
+        <style>
+            .iconStatus {
+                color: gray;
+            }
+        </style>
         <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
         <script src="index.js"></script>
     </head>
+
     <body>
         <ons-splitter>
             <ons-splitter-side id="menu" side="left" width="220px" collapse>
@@ -31,11 +39,15 @@
                             <div class="center">Будильник</div>
                         </ons-list-item>
                         <ons-list-item onclick="menuLoad('settings.html')">
-                            <div class="left"><ons-icon icon="md-settings" class="list-item__icon"></ons-icon></div>
+                            <div class="left">
+                                <ons-icon icon="md-settings" class="list-item__icon"></ons-icon>
+                            </div>
                             <div class="center">Настройки</div>
                         </ons-list-item>
                         <ons-list-item onclick="menuLoad('connect.html')">
-                            <div class="left"><ons-icon icon="md-network-setting" class="list-item__icon"></ons-icon></div>
+                            <div class="left">
+                                <ons-icon icon="md-network-setting" class="list-item__icon"></ons-icon>
+                            </div>
                             <div class="center">Подключение</div>
                         </ons-list-item>
                     </ons-list>
@@ -59,7 +71,9 @@
                 </ons-toolbar>
                 <ons-list>
                     <ons-list-item onclick="effectLoad('effectVoid', this)">
-                        <div class="left"><ons-icon icon="md-check-circle" class="list-item__icon"></ons-icon></div>
+                        <div class="left">
+                            <ons-icon icon="md-check-circle" class="list-item__icon"></ons-icon>
+                        </div>
                         <div class="center">Отключен</div>
                     </ons-list-item>
                     <ons-list-item onclick="effectLoad('effectAllRandom', this)">
@@ -151,14 +165,20 @@
                 <ons-list>
                     <ons-list-item>
                         <div class="center">Будильник включен</div>
-                        <div class="right">
-                            <ons-switch onchange="alarmSwitch()"></ons-switch>
-                        </div>
+                        <div class="right"><ons-switch onchange="alarmSwitch()"></ons-switch></div>
                     </ons-list-item>
                     <ons-list-item>
                         <div class="center">Время</div>
                         <div class="right">
-                            <ons-input id="txtAlarmTime" modifier="underbar" inputmode="numeric" placeholder="ЧЧ:ММ:СС" maxlength="8" style="width: 100px" oninput="alarmTime(this)"></ons-input>
+                            <ons-input
+                                id="txtAlarmTime"
+                                modifier="underbar"
+                                inputmode="numeric"
+                                placeholder="ЧЧ:ММ:СС"
+                                maxlength="8"
+                                style="width: 100px"
+                                oninput="alarmTime(this)"
+                            ></ons-input>
                         </div>
                     </ons-list-item>
                     <ons-list-header>Повторять по:</ons-list-header>
@@ -208,13 +228,27 @@
                     <ons-list-item>
                         <div class="center">Рассвет до будильника</div>
                         <div class="right">
-                            <ons-input id="txtAlarmBefore" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmBefore(this)" style="width: 50px"></ons-input>
+                            <ons-input
+                                id="txtAlarmBefore"
+                                modifier="underbar"
+                                inputmode="numeric"
+                                maxlength="2"
+                                oninput="alarmBefore(this)"
+                                style="width: 50px"
+                            ></ons-input>
                         </div>
                     </ons-list-item>
                     <ons-list-item>
                         <div class="center">Гореть после будильника</div>
                         <div class="right">
-                            <ons-input id="txtAlarmAfter" modifier="underbar" inputmode="numeric" maxlength="2" oninput="alarmAfter(this)" style="width: 50px"></ons-input>
+                            <ons-input
+                                id="txtAlarmAfter"
+                                modifier="underbar"
+                                inputmode="numeric"
+                                maxlength="2"
+                                oninput="alarmAfter(this)"
+                                style="width: 50px"
+                            ></ons-input>
                         </div>
                     </ons-list-item>
                 </ons-list>
@@ -243,17 +277,30 @@
                     <ons-list-item>
                         <div class="center">Часовой пояс</div>
                         <div class="right">
-                            <ons-input id="txtSettingsTz" modifier="underbar" inputmode="numeric" maxlength="3" style="width: 50px"></ons-input>
+                            <ons-input
+                                id="txtSettingsTz"
+                                modifier="underbar"
+                                inputmode="numeric"
+                                maxlength="3"
+                                style="width: 50px"
+                            ></ons-input>
                         </div>
                     </ons-list-item>
-                    <ons-list-header>Максимальная яркость:&nbsp;<span id="lblBrightness">192</span></ons-list-header>
+                    <ons-list-header> Максимальная яркость:&nbsp;<span id="lblBrightness">192</span></ons-list-header>
                     <ons-list-item style="padding-left: 6px">
                         <ons-row>
                             <ons-col width="40px" style="text-align: center; line-height: 31px">
                                 <ons-icon icon="md-brightness-5"></ons-icon>
                             </ons-col>
                             <ons-col>
-                                <ons-range id="rngBrightness" oninput="liveBrightness(this.value)" style="width: 100%" min="0" max="255" value="192"></ons-range>
+                                <ons-range
+                                    id="rngBrightness"
+                                    oninput="liveBrightness(this.value)"
+                                    style="width: 100%"
+                                    min="0"
+                                    max="255"
+                                    value="192"
+                                ></ons-range>
                             </ons-col>
                             <ons-col width="40px" style="text-align: center; line-height: 31px">
                                 <ons-icon icon="md-brightness-7"></ons-icon>
@@ -292,7 +339,13 @@
                 </ons-toolbar>
                 <div style="text-align: center; margin-top: 30px">
                     <p>
-                        <ons-input id="txtConnectIp" modifier="underbar" placeholder="A.B.C.D" inputmode="numeric" maxlength="15"></ons-input>
+                        <ons-input
+                            id="txtConnectIp"
+                            modifier="underbar"
+                            placeholder="A.B.C.D"
+                            inputmode="numeric"
+                            maxlength="15"
+                        ></ons-input>
                     </p>
                     <p style="margin-top: 30px">
                         <ons-button id="cmdConnect" onclick="connectLamp()">Подключиться</ons-button>

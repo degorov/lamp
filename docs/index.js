@@ -13,6 +13,8 @@ document.addEventListener('init', (event) => {
     } else if (pageId === 'alarm') {
         window.cmdAlarmSave = document.getElementById('cmdAlarmSave');
         console.log('GET ALARM');
+    } else if (pageId === 'settings') {
+        console.log('GET SETTINGS');
     } else if (pageId === 'connect') {
         document.getElementById('txtConnectIp').value = localStorage.getItem('lamp-ip') || '';
     }
@@ -81,13 +83,14 @@ function liveBrightness(br) {
     document.getElementById('lblBrightness').innerText = br;
 }
 
+function enableConnection() {
+    document.getElementById('txtConnectIp').disabled = false;
+    document.getElementById('cmdConnect').disabled = false;
+}
+
 function checkConnection(isConnectPage) {
     var lampIp = localStorage.getItem('lamp-ip') || '';
     var iconStatus = document.querySelector('.iconStatus');
-    if (isConnectPage) {
-        var txtConnectIp = document.getElementById('txtConnectIp');
-        var cmdConnect = document.getElementById('cmdConnect');
-    }
     if (lampIp) {
         fetch(`http://${lampIp}/`, {
             method: 'POST',
@@ -103,24 +106,15 @@ function checkConnection(isConnectPage) {
                 } else {
                     iconStatus.style.color = 'red';
                 }
-                if (isConnectPage) {
-                    txtConnectIp.disabled = false;
-                    cmdConnect.disabled = false;
-                }
+                if (isConnectPage) enableConnection();
             })
             .catch(() => {
                 iconStatus.style.color = 'red';
-                if (isConnectPage) {
-                    txtConnectIp.disabled = false;
-                    cmdConnect.disabled = false;
-                }
+                if (isConnectPage) enableConnection();
             });
     } else {
         iconStatus.style.color = 'gray';
-        if (isConnectPage) {
-            txtConnectIp.disabled = false;
-            cmdConnect.disabled = false;
-        }
+        if (isConnectPage) enableConnection();
     }
 }
 
